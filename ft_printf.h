@@ -6,7 +6,7 @@
 /*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 12:17:31 by mterkhoy          #+#    #+#             */
-/*   Updated: 2020/12/11 20:22:35 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2020/12/11 21:41:21 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ int				ft_get_precision(const char *format, va_list ap, size_t *i);
 int				ft_get_length(const char *format, size_t *i);
 char			ft_get_type(const char *format, size_t *i);
 
-int				ft_convert_percent(t_pf *pf, t_arg arg);
 int				ft_convert_char(t_pf *pf, t_arg arg, va_list ap);
 int				ft_convert_string(t_pf *pf, t_arg arg, va_list ap);
 int				ft_convert_int(t_pf *pf, t_arg arg, va_list ap);
 int				ft_convert_unsigned(t_pf *pf, t_arg arg, va_list ap);
+int				ft_convert_hex(t_pf *pf, t_arg arg, va_list ap);
 int				ft_convert_pointer(t_pf *pf, t_arg arg, va_list ap);
 
 void			ft_minus_correction(char *s);

@@ -6,7 +6,7 @@
 #    By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/17 22:01:09 by marc              #+#    #+#              #
-#    Updated: 2020/12/11 20:35:56 by mterkhoy         ###   ########.fr        #
+#    Updated: 2020/12/11 21:44:58 by mterkhoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRCS =	ft_parser.c	\
 		ft_parser_utils.c \
 		ft_printf.c \
 		ft_utils.c \
-		ft_converters.c \
+		ft_converters1.c \
+		ft_converters2.c \
 		ft_converters_utils.c \
 		ft_list.c
 
@@ -28,7 +29,8 @@ SURPL_O =	ft_parser.o \
 			ft_parser_utils.o \
 			ft_printf.o \
 			ft_utils.o \
-			ft_converters.o \
+			ft_converters1.o \
+			ft_converters2.o \
 			ft_converters_utils.o \
 			ft_list.o
 

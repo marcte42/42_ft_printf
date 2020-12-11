@@ -6,7 +6,7 @@
 /*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 12:17:14 by mterkhoy          #+#    #+#             */
-/*   Updated: 2020/12/11 19:39:53 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2020/12/11 21:31:31 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 int		ft_convert_arg(t_pf *pf, t_arg arg, va_list ap)
 {
-	if (arg.type == '%')
-		return (ft_convert_percent(pf, arg));
 	if (arg.type == 's')
 		return (ft_convert_string(pf, arg, ap));
-	if (arg.type == 'c')
+	if (arg.type == 'c' || arg.type == '%')
 		return (ft_convert_char(pf, arg, ap));
 	if (arg.type == 'd' || arg.type == 'i')
 		return (ft_convert_int(pf, arg, ap));
-	if (arg.type == 'u' || arg.type == 'x' || arg.type == 'X')
+	if (arg.type == 'u')
 		return (ft_convert_unsigned(pf, arg, ap));
+	if (arg.type == 'x' || arg.type == 'X')
+		return (ft_convert_hex(pf, arg, ap));
 	if (arg.type == 'p')
 		return (ft_convert_pointer(pf, arg, ap));
 	return (1);
