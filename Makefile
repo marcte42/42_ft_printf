@@ -6,7 +6,7 @@
 #    By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/17 22:01:09 by marc              #+#    #+#              #
-#    Updated: 2020/12/11 19:45:01 by mterkhoy         ###   ########.fr        #
+#    Updated: 2020/12/11 20:35:56 by mterkhoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,17 +16,17 @@ N_TEMP = temp.a
 
 NAME = libftprintf.a
 
-SRCS =	ft_parser.c \
+SRCS =	ft_parser.c	\
+		ft_parser_utils.c \
 		ft_printf.c \
-		ft_printf_utils.c \
 		ft_utils.c \
 		ft_converters.c \
 		ft_converters_utils.c \
 		ft_list.c
 
 SURPL_O =	ft_parser.o \
+			ft_parser_utils.o \
 			ft_printf.o \
-			ft_printf_utils.o \
 			ft_utils.o \
 			ft_converters.o \
 			ft_converters_utils.o \
@@ -34,7 +34,7 @@ SURPL_O =	ft_parser.o \
 
 CC = gcc
 
-FLAGS = -c
+FLAGS = -Wall -Wextra -Werror -c
 
 INCLUDES = -I.
 

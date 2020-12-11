@@ -6,24 +6,11 @@
 /*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 15:40:16 by mterkhoy          #+#    #+#             */
-/*   Updated: 2020/12/11 19:39:43 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2020/12/11 20:41:56 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int		ft_convert_percent(t_pf *pf, t_arg arg)
-{
-	char *str;
-
-	if (!(str = ft_strdup("%")))
-		return (0);
-	if (!(str = ft_add_width(str, arg)))
-		return (0);
-	if (!ft_pf_lstadd_back(&pf->lst, ft_pf_lstnew(str, ft_strlen(str))))
-		return (0);
-	return (1);
-}
 
 int		ft_convert_char(t_pf *pf, t_arg arg, va_list ap)
 {
@@ -132,14 +119,10 @@ int		ft_convert_pointer(t_pf *pf, t_arg arg, va_list ap)
 	unsigned long	pointer;
 
 	pointer = (unsigned long)va_arg(ap, void *);
-	if (pointer == 0 && arg.precision == 0)
+	if (pointer == 0)
 	{
-		if (!(str = ft_strdup("0x")))
-			return (0);
-	}
-	else if (pointer == 0)
-	{
-		if (!(str = ft_strdup("0x0")))
+		str = (arg.precision == 0) ? ft_strdup("0x") : ft_strdup("0x0");
+		if (!str)
 			return (0);
 	}
 	else
