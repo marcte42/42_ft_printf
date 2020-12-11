@@ -6,11 +6,18 @@
 /*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 15:40:16 by mterkhoy          #+#    #+#             */
-/*   Updated: 2020/12/11 20:36:17 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2020/12/11 21:59:05 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int		ft_init_pf(t_pf *pf, int fd)
+{
+	pf->lst = NULL;
+	pf->fd = fd;
+	return (1);
+}
 
 char	*ft_strduptoperc(const char *s1, size_t *index)
 {

@@ -6,7 +6,7 @@
 /*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 12:17:31 by mterkhoy          #+#    #+#             */
-/*   Updated: 2020/12/11 21:41:21 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2020/12/11 22:03:56 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,17 @@ int				ft_printf(const char *format, ...);
 int				ft_process(t_pf *pf, const char *format, va_list ap);
 int				ft_parse_arg(t_pf *pf, const char *format,
 								va_list ap, size_t *i);
+int				ft_convert_arg(t_pf *pf, t_arg arg, va_list ap);
+int				ft_display(t_pf pf);
 
 t_flag			ft_get_flag(const char *format, size_t *i);
 int				ft_get_width(const char *format, va_list ap, size_t *i);
 int				ft_get_precision(const char *format, va_list ap, size_t *i);
 int				ft_get_length(const char *format, size_t *i);
 char			ft_get_type(const char *format, size_t *i);
+
+int				ft_isflag(char c);
+int				ft_istype(char c);
 
 int				ft_convert_char(t_pf *pf, t_arg arg, va_list ap);
 int				ft_convert_string(t_pf *pf, t_arg arg, va_list ap);
@@ -65,17 +70,15 @@ int				ft_convert_unsigned(t_pf *pf, t_arg arg, va_list ap);
 int				ft_convert_hex(t_pf *pf, t_arg arg, va_list ap);
 int				ft_convert_pointer(t_pf *pf, t_arg arg, va_list ap);
 
-void			ft_minus_correction(char *s);
 char			*ft_add_precision(char *s, t_arg arg);
 char			*ft_add_width(char *s, t_arg arg);
+void			ft_minus_correction(char *s);
+
 int				ft_intlen_base(unsigned long n, size_t base);
 char			*ft_itoa_base(unsigned long n, size_t base);
 char			*ft_fstrjoin(char *s1, char *s2);
 char			*ft_strduptoperc(const char *s1, size_t *index);
-
 int				ft_init_pf(t_pf *pf, int fd);
-int				ft_isflag(char c);
-int				ft_istype(char c);
 
 t_pf_lst		*ft_pf_lstnew(void *content, size_t size);
 int				ft_pf_lstadd_back(t_pf_lst **alst, t_pf_lst *new);

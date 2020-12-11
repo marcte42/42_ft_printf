@@ -6,18 +6,11 @@
 /*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 16:00:32 by mterkhoy          #+#    #+#             */
-/*   Updated: 2020/12/11 20:32:37 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2020/12/11 22:01:44 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int		ft_init_pf(t_pf *pf, int fd)
-{
-	pf->lst = NULL;
-	pf->fd = fd;
-	return (1);
-}
 
 int		ft_isflag(char c)
 {
