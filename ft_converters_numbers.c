@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_converters2.c                                   :+:      :+:    :+:   */
+/*   ft_converters_numbers.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 15:40:16 by mterkhoy          #+#    #+#             */
-/*   Updated: 2020/12/11 21:44:21 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2020/12/12 10:36:50 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,8 @@ int		ft_convert_pointer(t_pf *pf, t_arg arg, va_list ap)
 		if (!(str = ft_strdup("0x")))
 			return (0);
 		str2 = ft_itoa_base(pointer, 16);
-		str = ft_fstrjoin(str, str2);
+		if (!(str = ft_fstrjoin(str, str2)))
+			return (0);
 	}
 	if (!(str = ft_add_width(str, arg)))
 		return (0);

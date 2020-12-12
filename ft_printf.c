@@ -6,7 +6,7 @@
 /*   By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 12:17:14 by mterkhoy          #+#    #+#             */
-/*   Updated: 2020/12/12 09:20:29 by mterkhoy         ###   ########.fr       */
+/*   Updated: 2020/12/12 10:32:07 by mterkhoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ int		ft_process(t_pf *pf, const char *format, va_list ap)
 		}
 		else
 		{
-			str = ft_strduptoperc(&format[i], &i);
+			if (!(str = ft_strduptoperc(&format[i], &i)))
+				return (0);
 			if (!ft_pf_lstadd_back(&pf->lst, ft_pf_lstnew(str, ft_strlen(str))))
 				return (0);
 		}
