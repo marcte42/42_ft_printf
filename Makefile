@@ -6,13 +6,9 @@
 #    By: mterkhoy <mterkhoy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/17 22:01:09 by marc              #+#    #+#              #
-#    Updated: 2020/12/11 21:53:34 by mterkhoy         ###   ########.fr        #
+#    Updated: 2020/12/12 10:23:28 by mterkhoy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-LIBFT = ./libft/libft.a
-
-N_TEMP = temp.a
 
 NAME = libftprintf.a
 
@@ -53,10 +49,8 @@ all : $(NAME)
 clean :
 	$(MAKE) clean -C ./libft
 	rm -rf $(SURPL_O)
-	rm -rf $(OBJS)
 
 fclean : clean
-	$(MAKE) fclean -C ./libft
-	rm -rf $(NAME)
+	rm -rf $(NAME) libft/libft.a
 
 re : fclean all
